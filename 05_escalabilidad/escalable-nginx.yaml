@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: escalable-nginx
+  name: escalable-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: escalable-nginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: escalable-nginx
+    spec:
+      containers:
+        - image: nginx:1.8
+          name: nginx
+          resources: {}
+status: {}
